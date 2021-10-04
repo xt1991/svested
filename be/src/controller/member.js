@@ -100,7 +100,8 @@ const MemberControllers = {
   getPie,
   getBar,
   getChart,
-  setChart
+  setChart,
+  tranlateData
 };
 
 module.exports = MemberControllers;

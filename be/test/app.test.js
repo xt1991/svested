@@ -103,11 +103,6 @@ describe('app.js', () => {
       }
     ]);
   });
-  it('test get /bar fail', async () => {
-    MemberModel.aggregate = jest.fn().mockRejectedValueOnce();
-    const err = await MemberControllers.getBar().catch((e) => e);
-    expect(err).toBeInstanceOf(Error);
-  });
 
   it('test get /pie', async () => {
     const res = await MemberControllers.getPie();
@@ -123,6 +118,12 @@ describe('app.js', () => {
         }
       ]
     );
+  });
+
+  it('test get /bar fail', async () => {
+    MemberModel.aggregate = jest.fn().mockRejectedValueOnce();
+    const err = await MemberControllers.getBar().catch((e) => e);
+    expect(err).toBeInstanceOf(Error);
   });
 
   it('test get /pie fail', async () => {
@@ -155,5 +156,10 @@ describe('app.js', () => {
     MemberModel.create = jest.fn().mockRejectedValueOnce();
     const err = await MemberControllers.setChart().catch((e) => e);
     expect(err).toBeInstanceOf(Error);
+  });
+
+  it('test tranlateData with empty data', async () => {
+    const result = await MemberControllers.tranlateData(null);
+    expect(result).toEqual([]);
   });
 });
