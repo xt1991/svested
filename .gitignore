@@ -1,0 +1,8 @@
+.idea/*
+fe/dist
+be/coverage
+*.log
+.vscode
+.env
+be/node_modules
+fe/node_modules
