@@ -23,4 +23,4 @@ Note:
 Note:
 
 - The BE need start first then FE after
-- I don't have too much time for code test , so the BE lack of unit test and the layout not look pretty
+- I don't have too much time for code test , so the FE lack of unit test and the layout not look pretty
